@@ -74,6 +74,7 @@ body * {
 }
 
 #switch button {
+  animation: slide-out 0.4s;
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
@@ -88,11 +89,16 @@ body * {
 }
 
 .light #switch button{
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
+  
   display: block;
   width: 64px;
   height: 24px;
@@ -174,5 +180,25 @@ footer {
 
   .light {
     --bg-url: url(./asstes/bglight.jpeg);
+  }
+}
+
+
+/* animations */ 
+@keyframes slide-in{
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out{
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0%;
   }
 }
